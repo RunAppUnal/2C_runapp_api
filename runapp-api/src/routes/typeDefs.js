@@ -9,16 +9,15 @@ type Route {
     from_lng: Float!
     to_lat: Float!
     to_lng: Float!
-    waypoints: String!
-    departure: Datetime!
+    waypoints: String
+    departure: String!
     cost: Float!
-    users_in_route: String!
-    active: Boolean!
+    users_in_route: String
+    active: Boolean
     spaces_avaible: Int!
 }
 
 input RouteInput {
-  id: Int!
   user_id: Int!
   car_id: Int!
   title: String!
@@ -27,11 +26,11 @@ input RouteInput {
   from_lng: Float!
   to_lat: Float!
   to_lng: Float!
-  waypoints: String!
-  departure: Datetime!
+  waypoints: String
+  departure: String!
   cost: Float!
-  users_in_route: String!
-  active: Boolean!
+  users_in_route: String
+  active: Boolean
   spaces_avaible: Int!
 }
 `;
