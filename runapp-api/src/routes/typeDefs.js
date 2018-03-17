@@ -41,7 +41,7 @@ export const routesQueries = `
     routeById(id: Int!): Route!
 `;
 
-export const routeMutations = `
+export const routesMutations = `
     createRoute(route: RouteInput!): Route!
     deleteRoute(id: Int!): Route!
     updateRoute(id: Int!, route: RouteInput!): Route!
