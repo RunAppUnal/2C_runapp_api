@@ -8,6 +8,9 @@ services:
       ROUTES_URL: '192.168.99.103'
       ROUTES_PORT: '6001'
       ROUTES_ENTRY: 'routes/'
+      VEHICLES_URL: '192.168.99.102'
+      VEHICLES_PORT: '4003'
+      VEHICLES_ENTRY: 'vehicles/'
       #TO DO here
     ports:
       - '8000:8000'
