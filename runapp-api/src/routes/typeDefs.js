@@ -17,7 +17,7 @@ type Route {
     spaces_avaible: Int!
 }
 
-input StudentInput {
+input RouteInput {
   id: Int!
   user_id: Int!
   car_id: Int!
