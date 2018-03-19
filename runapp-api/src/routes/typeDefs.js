@@ -9,10 +9,10 @@ type Route {
     from_lng: Float!
     to_lat: Float!
     to_lng: Float!
-    waypoints: String
+    waypoints: String!
     departure: String!
     cost: Float!
-    users_in_route: String
+    users_in_route: String!
     active: Boolean
     spaces_avaible: Int!
 }
@@ -26,22 +26,30 @@ input RouteInput {
   from_lng: Float!
   to_lat: Float!
   to_lng: Float!
-  waypoints: String
+  waypoints: String!
   departure: String!
   cost: Float!
-  users_in_route: String
+  users_in_route: String!
   active: Boolean
   spaces_avaible: Int!
 }
 `;
 
+
+
 export const routesQueries = `
     allRoutes: [Route]!
     routeById(id: Int!): Route!
+    myRoutes(userid: Int!): [Route]!
+    otherRoutes(userid: Int!): [Route]!
+    searchMyRoutes(userid: Int!, word: String!, cost: String!, spaces: String!, date: String!): [Route]!
+    searchOtherRoutes(userid: Int!, word: String!, cost: String!, spaces: String!, date: String!): [Route]!
 `;
 
 export const routesMutations = `
     createRoute(route: RouteInput!): Route!
     deleteRoute(id: Int!): Route!
     updateRoute(id: Int!, route: RouteInput!): Route!
+    removeUserFromRoute(id: Int!, userid: Int!): Route!
+    addUserFromRoute(id: Int!, userid: Int!): Route!
 `;

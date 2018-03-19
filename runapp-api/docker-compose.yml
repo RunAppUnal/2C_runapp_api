@@ -8,6 +8,5 @@ services:
       ROUTES_URL: '192.168.99.103'
       ROUTES_PORT: '6001'
       ROUTES_ENTRY: 'routes/'
-      #TO DO here
     ports:
       - '8000:8000'

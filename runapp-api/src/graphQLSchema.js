@@ -10,6 +10,7 @@ import {
 	routesTypeDef
 } from './routes/typeDefs';
 
+
 // import {
 // 	coursesMutations,
 // 	coursesQueries,
