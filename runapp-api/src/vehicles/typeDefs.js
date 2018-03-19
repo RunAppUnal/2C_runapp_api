@@ -26,6 +26,9 @@ input VehicleInput {
 export const vehiclesQueries = `
     allVehicles: [Vehicle]!
     vehicleById(id: Int!): Vehicle!
+    myVehicles(user: Int!): [Vehicle]!
+    findVehicle(plate: String!): Vehicle!
+    countMyVehicles(user: Int!): Int!
 `;
 
 export const vehiclesMutations = `

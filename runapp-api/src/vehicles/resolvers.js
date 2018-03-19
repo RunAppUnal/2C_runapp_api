@@ -9,6 +9,12 @@ const resolvers = {
 			getRequest(URL, ''),
 		vehicleById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),
+		myVehicles: (_, { user }) =>
+			generalRequest(`${URL}/my_vehicles?user_id=${user}`, 'GET'),
+		findVehicle: (_, { plate }) =>
+			generalRequest(`${URL}/find_vehicle?plate=${plate}`, 'GET'),
+		countMyVehicles: (_, { user }) =>
+			generalRequest(`${URL}/count_my_vehicles?user_id=${user}`, 'GET'),
 	},
 	Mutation: {
 		createVehicle: (_, { vehicle }) =>
