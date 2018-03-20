@@ -5,6 +5,12 @@ import { makeExecutableSchema } from 'graphql-tools';
 import { mergeSchemas } from './utilities';
 
 import {
+	bikeRouteMutations,
+	bikeRouteQueries,
+	bikeRouteTypeDef
+} from './routes/typeDefs';
+
+import {
 	routesMutations,
 	routesQueries,
 	routesTypeDef
@@ -32,38 +38,32 @@ import routesResolvers from './routes/resolvers';
 import vehiclesResolvers from './vehicles/resolvers';
 import favroutesResolvers from './favroutes/resolvers';
 import ratingsResolvers from './ratings/resolvers';
-// import coursesResolvers from './courses/resolvers';
-// import gradesResolvers from './grades/resolvers';
+import bikeRouteResolvers from './bikes/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
+		bikeRouteTypeDef,
 		routesTypeDef,
 		vehiclesTypeDef,
 		favroutesTypeDef,
 		ratingsTypeDef
-		// ,
-		// coursesTypeDef,
-		// gradesTypeDef
 	],
 	[
+
+		bikeRouteQueries,
 		routesQueries,
 		vehiclesQueries,
 		favroutesQueries,
 		ratingsQueries
-		// ,
-		// coursesQueries,
-		// gradesQueries
 	],
 	[
+		bikeRouteMutations,
 		routesMutations,
 		vehiclesMutations,
 		favroutesMutations,
 		ratingsMutations
-		// ,
-		// coursesMutations,
-		// gradesMutations
 	]
 );
 
@@ -72,6 +72,7 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
+		bikeRouteResolvers,
 		routesResolvers,
 		vehiclesResolvers,
 		favroutesResolvers,
