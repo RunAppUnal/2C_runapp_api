@@ -14,6 +14,9 @@ services:
       FAVROUTES_URL: '192.168.99.102'
       FAVROUTES_PORT: '4003'
       FAVROUTES_ENTRY: 'fav_routes/'
+      BIKEROUTES_URL: '192.168.99.101'
+      BIKEROUTES_PORT: '6003'
+      BIKEROUTES_ENTRY: 'bikeroutes/'
       #TO DO here
     ports:
       - '8000:8000'
