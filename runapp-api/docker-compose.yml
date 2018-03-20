@@ -14,6 +14,9 @@ services:
       FAVROUTES_URL: '192.168.99.103'
       FAVROUTES_PORT: '6005'
       FAVROUTES_ENTRY: 'fav_routes/'
+      RATINGS_URL: '192.168.99.103'
+      RATINGS_PORT: '6003'
+      RATINGS_ENTRY: 'ratings/'
       #TO DO here
     ports:
       - '8000:8000'
