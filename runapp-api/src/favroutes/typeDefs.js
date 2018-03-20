@@ -17,12 +17,14 @@ input FavrouteInput {
     polyline3: String!
     polyline4: String!
     polyline5: String!
+    count: Int!
 }
 `;
 
 export const favroutesQueries = `
     allFavroutes: [Favroute]!
     favrouteById(id: Int!): Favroute!
+    myFavRoutes(user_id: Int!): [Favroute]!
 `;
 
 export const favroutesMutations = `

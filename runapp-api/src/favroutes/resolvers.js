@@ -9,6 +9,8 @@ const resolvers = {
 			getRequest(URL, ''),
 		favrouteById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),
+		myFavRoutes: (_, { user }) =>
+			generalRequest(`${URL}/my_favRoutes?user_id=${user}`, 'GET'),
 	},
 	Mutation: {
 		createFavroute: (_, { favroute }) =>
