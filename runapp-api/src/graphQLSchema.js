@@ -8,7 +8,7 @@ import {
 	bikeRouteMutations,
 	bikeRouteQueries,
 	bikeRouteTypeDef
-} from './routes/typeDefs';
+} from './bikes/typeDefs';
 
 import {
 	routesMutations,
