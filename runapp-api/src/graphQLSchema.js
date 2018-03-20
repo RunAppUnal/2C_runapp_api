@@ -10,20 +10,21 @@ import {
 	routesTypeDef
 } from './routes/typeDefs';
 
+import {
+	vehiclesMutations,
+	vehiclesQueries,
+	vehiclesTypeDef
+} from './vehicles/typeDefs';
 
-// import {
-// 	coursesMutations,
-// 	coursesQueries,
-// 	coursesTypeDef
-// } from './courses/typeDefs';
-//
-// import {
-// 	gradesMutations,
-// 	gradesQueries,
-// 	gradesTypeDef
-// } from './grades/typeDefs';
+import {
+	favroutesMutations,
+	favroutesQueries,
+	favroutesTypeDef
+} from './favroutes/typeDefs';
 
 import routesResolvers from './routes/resolvers';
+import vehiclesResolvers from './vehicles/resolvers';
+import favroutesResolvers from './favroutes/resolvers';
 // import coursesResolvers from './courses/resolvers';
 // import gradesResolvers from './grades/resolvers';
 
@@ -31,19 +32,25 @@ import routesResolvers from './routes/resolvers';
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
-		routesTypeDef
+		routesTypeDef,
+		vehiclesTypeDef,
+		favroutesTypeDef
 		// ,
 		// coursesTypeDef,
 		// gradesTypeDef
 	],
 	[
-		routesQueries
+		routesQueries,
+		vehiclesQueries,
+		favroutesQueries
 		// ,
 		// coursesQueries,
 		// gradesQueries
 	],
 	[
-		routesMutations
+		routesMutations,
+		vehiclesMutations,
+		favroutesMutations
 		// ,
 		// coursesMutations,
 		// gradesMutations
@@ -55,6 +62,8 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		routesResolvers
+		routesResolvers,
+		vehiclesResolvers,
+		favroutesResolvers
 	)
 });
