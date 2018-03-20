@@ -67,3 +67,18 @@ query {
     title
   }
 }
+
+================================================================================
+mutation {
+  createRating(rating:{
+    route_id: 4,
+    user_id: 1,
+    car_rating: 2,
+    driver_rating: 4,
+    comment: "Yeap, I liked it"
+  }) {
+    route_id
+    user_id
+    average_rating
+  }
+}

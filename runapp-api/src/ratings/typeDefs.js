@@ -1,4 +1,4 @@
-export const favroutesTypeDef = `
+export const ratingsTypeDef = `
 type Rating {
     id: Int!
     route_id: Int!
