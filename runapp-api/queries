@@ -82,3 +82,51 @@ mutation {
     average_rating
   }
 }
+
+================================================================================
+query{
+  userByUsername(username:"ccvacad"){
+    username
+    userid
+  }
+}
+
+query{
+  userById(userid:1){
+    username
+    userid
+  }
+}
+
+================================================================================
+mutation{
+  createUser(user:{
+    username:"ccvacad",
+    password:"qwerty",
+    email:"ccvacad@unal.edu.co",
+    name:"Christian",
+    lastname:"Vaca",
+    cellphone:"3153495394"
+  }){
+    userid
+  }
+}
+
+================================================================================
+mutation{
+  deleteUser(
+    username: "ccvacad"
+  ){
+    userid
+  }
+}
+
+================================================================================
+mutation{
+  login(
+     username:"ccvacad",
+     password:"qwerty"
+  ){
+     userid
+  }
+}

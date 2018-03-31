@@ -34,16 +34,24 @@ import {
 	ratingsTypeDef
 } from './ratings/typeDefs';
 
+import {
+	usersMutations,
+	usersQueries,
+	usersTypeDef
+} from './users/typeDefs';
+
 import routesResolvers from './routes/resolvers';
 import vehiclesResolvers from './vehicles/resolvers';
 import favroutesResolvers from './favroutes/resolvers';
 import ratingsResolvers from './ratings/resolvers';
 import bikeRouteResolvers from './bikes/resolvers';
+import userResolvers from './users/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
+		usersTypeDef,
 		bikeRouteTypeDef,
 		routesTypeDef,
 		vehiclesTypeDef,
@@ -51,7 +59,7 @@ const mergedTypeDefs = mergeSchemas(
 		ratingsTypeDef
 	],
 	[
-
+		usersQueries,
 		bikeRouteQueries,
 		routesQueries,
 		vehiclesQueries,
@@ -59,6 +67,7 @@ const mergedTypeDefs = mergeSchemas(
 		ratingsQueries
 	],
 	[
+		usersMutations,
 		bikeRouteMutations,
 		routesMutations,
 		vehiclesMutations,
@@ -72,6 +81,7 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
+		userResolvers,
 		bikeRouteResolvers,
 		routesResolvers,
 		vehiclesResolvers,
