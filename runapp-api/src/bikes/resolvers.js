@@ -6,21 +6,19 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 const resolvers = {
 	Query: {
 		allBikeRoutes: (_) =>
-			getRequest(URL, ''),
+			generalRequest(URL, 'GET'),
 		bikeRoutesById: (_, { id }) =>
-			generalRequest(`${URL}/${id}`, 'GET'),
-		myBikeRoutes: (_, { user }) =>
-			generalRequest(`${URL}/find/${user}`, 'GET'),
+			generalRequest(`${URL}${id}`, 'GET'),
 		findCompany: (_, { id }) =>
-			generalRequest(`${URL}/findCompany/${id}`, 'GET'),
+			generalRequest(`${URL}findCompany/${id}`, 'GET'),
 	},
 	Mutation: {
 		createBikeRoute: (_, { bikeRoute }) =>
-			generalRequest(`${URL}`, 'POST', BikeRoute),
+			generalRequest(`${URL}`, 'POST', bikeRoute),
 		updateBikeRoute: (_, { id, bikeRoute }) =>
-			generalRequest(`${URL}/${id}`, 'PUT', BikeRoute),
+			generalRequest(`${URL}${id}`, 'PUT', bikeRoute),
 		deleteBikeRoute: (_, { id }) =>
-			generalRequest(`${URL}/${id}`, 'DELETE')
+			generalRequest(`${URL}${id}`, 'DELETE')
 	}
 };
 
