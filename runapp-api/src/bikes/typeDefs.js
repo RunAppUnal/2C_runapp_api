@@ -1,4 +1,9 @@
 export const bikeRouteTypeDef = `
+type GeoJSON {
+    type: String
+    coordinates: [[Float]]
+}
+
 type BikeRoute {
     id: ID!
     user_id: Int!
@@ -6,12 +11,11 @@ type BikeRoute {
     similar_routes: [BikeRoute]
     origin: [Float]!
     destination: [Float]!
-    route_points: String
+    route_points: GeoJSON
     route_distance: Float
 }
 
 input BikeRouteInput {
-    id: ID!
     user_id: Int!
     origin: [Float]!
     destination: [Float]!
@@ -22,7 +26,6 @@ input BikeRouteInput {
 export const bikeRouteQueries = `
     allBikeRoutes: [BikeRoute]!
     bikeRoutesById(id: ID!): BikeRoute!
-    myBikeRoutes(user: Int!): [BikeRoute]!
     findCompany(id: ID!): [BikeRoute]!
 `;
 
