@@ -130,3 +130,31 @@ mutation{
      userid
   }
 }
+
+================================================================================
+  VEHICLES
+================================================================================
+mutation {
+  createVehicle(vehicle:{
+    user_id: 1
+    plate: "AAA-111"
+    kind: "Carro"
+    model: 2015
+    color: "Blanco"
+    capacity: 4
+    image: ""
+    brand: "Renault"
+  }) {
+   	id
+    plate
+  }
+}
+
+================================================================================
+query{
+  myVehicles(user:1){
+    plate
+    brand
+    color
+  }
+}
