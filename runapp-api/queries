@@ -130,3 +130,41 @@ mutation{
      userid
   }
 }
+
+================================================================================
+mutation {
+  createBikeRoute(bikeRoute:{
+    user_id: 777
+    origin: [-74.08415121,4.6720583],
+    destination: [-74.1395411,4.7102471],
+    time: "Mon Mar 29 2018 14:46:13 GMT-0500"
+  }) {
+    id
+    user_id
+    origin
+    destination
+    time
+  }
+}
+
+================================================================================
+query {
+  bikeRoutesById(id:"5ac9dc33db1d5c40ae32023a"){
+    id
+    route_points{
+      coordinates
+    }
+    route_distance
+    
+  }
+}
+
+================================================================================
+query {
+  allBikeRoutes{
+    id
+    route_distance
+    origin
+    destination
+  }
+}
