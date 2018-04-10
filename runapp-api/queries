@@ -13,7 +13,7 @@ mutation {
     cost: 2000
     users_in_route: ""
     active: true
-    spaces_avaible: 4
+    spaces_available: 4
   }) {
     title
     description

@@ -14,7 +14,7 @@ type Route {
     cost: Float!
     users_in_route: String!
     active: Boolean
-    spaces_avaible: Int!
+    spaces_available: Int!
 }
 
 input RouteInput {
@@ -31,7 +31,7 @@ input RouteInput {
   cost: Float!
   users_in_route: String!
   active: Boolean
-  spaces_avaible: Int!
+  spaces_available: Int!
 }
 `;
 
