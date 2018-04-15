@@ -68,7 +68,7 @@ query {
   }
 }
 
-================================================================================
+=============================  RATINGS  ===================================================
 mutation {
   createRating(rating:{
     route_id: 4,
@@ -79,6 +79,46 @@ mutation {
   }) {
     route_id
     user_id
+    average_rating
+  }
+}
+
+mutation {
+  deleteRating(id:1) {
+    route_id
+  }
+}
+
+mutation {
+  updateRating(id:1, rating:{
+    route_id: 1,
+    user_id: 1,
+    car_rating: 2,
+    driver_rating: 1,
+    comment: "It was awful, i won't come back"
+  }) {
+    route_id
+    user_id
+    average_rating
+  }
+}
+
+query{
+  allRatings{
+    route_id
+    user_id
+    car_rating
+    driver_rating
+    average_rating
+  }
+}
+
+query{
+  ratingById(id:1){
+    route_id
+    user_id
+    car_rating
+    driver_rating
     average_rating
   }
 }
