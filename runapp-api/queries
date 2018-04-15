@@ -168,3 +168,64 @@ query {
     destination
   }
 }
+
+============ VEHICLES ==============================
+query{
+  vehicleById(id: 1){
+    plate
+    user_id
+    kind
+    model
+    color
+    capacity
+    brand
+    
+  }
+}
+
+query{
+  myVehicles(user: 1){
+    plate
+    kind
+    model
+  }
+}
+
+query{
+  allVehicles{
+    plate
+    user_id
+  }
+}
+
+mutation{
+  createVehicle(vehicle: {
+    plate: "DDD-111"
+    user_id: 1
+    kind: "Carro"
+    model: 2011
+    color: "Negro"
+    capacity: 4
+    image: ""
+    brand: "Renault"
+  }) {
+    plate
+  }
+}
+
+
+mutation{
+  updateVehicle(id: 3, vehicle: {
+    plate: "DDD-111"
+    user_id: 1
+    kind: "Carro"
+    model: 2011
+    color: "Blanco"
+    capacity: 4
+    image: ""
+    brand: "Renault"
+  }){
+    color
+  }
+  
+}
