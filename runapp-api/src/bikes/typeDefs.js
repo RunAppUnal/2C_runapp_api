@@ -11,6 +11,8 @@ type BikeRoute {
     similar_routes: [BikeRoute]
     origin: [Float]!
     destination: [Float]!
+    originAddr: String
+    destinationAddr: String
     route_points: GeoJSON
     route_distance: Float
 }
@@ -19,6 +21,8 @@ input BikeRouteInput {
     user_id: Int!
     origin: [Float]!
     destination: [Float]!
+    originAddr: String
+    destinationAddr: String
     time: String
 }
 `;

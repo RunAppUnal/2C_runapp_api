@@ -195,7 +195,7 @@ query {
       coordinates
     }
     route_distance
-    
+
   }
 }
 
@@ -219,7 +219,7 @@ query{
     color
     capacity
     brand
-    
+
   }
 }
 
@@ -267,5 +267,5 @@ mutation{
   }){
     color
   }
-  
+
 }
