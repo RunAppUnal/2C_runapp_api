@@ -6,9 +6,9 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 const resolvers = {
 	Query: {
 		allRatings: (_) =>
-			getRequest(URL, ''),
+			generalRequest(URL, 'GET'),
 		ratingById: (_, { id }) =>
-			generalRequest(`${URL}/${id}`, 'GET'),
+			generalRequest(`${URL}${id}`, 'GET'),
 	},
 	Mutation: {
 		createRating: (_, { rating }) =>
