@@ -16,7 +16,7 @@ const resolvers = {
 		deleteUser: (_, { username }) =>
 			generalRequest(`${URL}u/${username}`, 'DELETE'),
 		login: (_, {email, password}) =>
-			generalRequest(`${URL}sign_in`, 'POST', {email, password})
+			generalRequest(`${URL}/sign_in`, 'POST', {email, password})
 	}
 };
 
