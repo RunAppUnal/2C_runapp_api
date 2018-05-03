@@ -12,11 +12,11 @@ const resolvers = {
 	},
 	Mutation: {
 		createUser: (_, { user }) =>
-			generalRequest(`${URL}register`, 'POST', user),
+			generalRequest(`${URL}`, 'POST', user),
 		deleteUser: (_, { username }) =>
 			generalRequest(`${URL}u/${username}`, 'DELETE'),
 		login: (_, {username, password}) =>
-			generalRequest(`${URL}login`, 'POST', {username, password})
+			generalRequest(`${URL}sign_in`, 'POST', {email, password})
 	}
 };
 

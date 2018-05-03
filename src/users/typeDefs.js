@@ -1,17 +1,21 @@
 export const usersTypeDef = `
 type User {
-    userid: Int!
+    id: Int!
     username: String!
     password: String!
+    provider: String!
     email: String!
     name: String!
     lastname: String!
     cellphone: String!
+    uid: String!
+    allow_password_change: Boolean!
 }
 
 input UserInput {
   username: String!
   password: String!
+  password_confirmation: String!
   email: String!
   name: String!
   lastname: String!
