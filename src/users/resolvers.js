@@ -6,9 +6,9 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 const resolvers = {
 	Query: {
 		userById: (_, { userid }) =>
-			generalRequest(`${URL}${userid}`, 'GET'),
+			generalRequest(`${URL}userById/${userid}`, 'GET'),
 		userByUsername: (_, { username }) =>
-			generalRequest(`${URL}u/${username}`, 'GET'),
+			generalRequest(`${URL}userByUsername/${username}`, 'GET'),
 	},
 	Mutation: {
 		createUser: (_, { user }) =>
