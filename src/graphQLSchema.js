@@ -40,12 +40,18 @@ import {
 	usersTypeDef
 } from './users/typeDefs';
 
+import {
+	authMutations,
+  authTypeDef
+} from './auth/typeDefs';
+
 import routesResolvers from './routes/resolvers';
 import vehiclesResolvers from './vehicles/resolvers';
 import favroutesResolvers from './favroutes/resolvers';
 import ratingsResolvers from './ratings/resolvers';
 import bikeRouteResolvers from './bikes/resolvers';
 import userResolvers from './users/resolvers';
+import authResolvers from './auth/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
@@ -56,7 +62,8 @@ const mergedTypeDefs = mergeSchemas(
 		routesTypeDef,
 		vehiclesTypeDef,
 		favroutesTypeDef,
-		ratingsTypeDef
+		ratingsTypeDef,
+		authTypeDef
 	],
 	[
 		usersQueries,
@@ -72,7 +79,8 @@ const mergedTypeDefs = mergeSchemas(
 		routesMutations,
 		vehiclesMutations,
 		favroutesMutations,
-		ratingsMutations
+		ratingsMutations,
+		authMutations
 	]
 );
 
@@ -86,6 +94,7 @@ export default makeExecutableSchema({
 		routesResolvers,
 		vehiclesResolvers,
 		favroutesResolvers,
-		ratingsResolvers
+		ratingsResolvers,
+		authResolvers
 	)
 });

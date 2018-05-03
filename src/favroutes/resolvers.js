@@ -8,17 +8,17 @@ const resolvers = {
 		allFavroutes: (_) =>
 			getRequest(URL, ''),
 		favrouteById: (_, { id }) =>
-			generalRequest(`${URL}/${id}`, 'GET'),
-		myFavRoutes: (_, { user }) =>
-			generalRequest(`${URL}/my_favRoutes?user_id=${user}`, 'GET'),
+			generalRequest(`${URL}${id}/`, 'GET'),
+		myFavRoutes: (_, { user_id }) =>
+			generalRequest(`${URL}my_favRoutes/${user_id}/`, 'GET'),
 	},
 	Mutation: {
 		createFavroute: (_, { favroute }) =>
 			generalRequest(`${URL}`, 'POST', favroute),
 		updateFavroute: (_, { id, favroute }) =>
-			generalRequest(`${URL}/${id}`, 'PUT', favroute),
+			generalRequest(`${URL}${id}/`, 'PUT', favroute),
 		deleteFavroute: (_, { id }) =>
-			generalRequest(`${URL}/${id}`, 'DELETE')
+			generalRequest(`${URL}${id}/`, 'DELETE')
 	}
 };
 
