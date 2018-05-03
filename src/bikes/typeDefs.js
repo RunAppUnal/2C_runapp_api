@@ -5,7 +5,8 @@ type GeoJSON {
 }
 
 type BikeRoute {
-    id: ID!
+    id: ID
+    _id: ID
     user_id: Int!
     time: String
     similar_routes: [BikeRoute]
