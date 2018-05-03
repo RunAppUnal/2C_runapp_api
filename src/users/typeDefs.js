@@ -31,5 +31,5 @@ export const usersQueries = `
 export const usersMutations = `
     createUser(user: UserInput!): User!
     deleteUser(username: String!): User!
-    login(username: String!, password: String!): User!
+    login(email: String!, password: String!): User!
 `;
