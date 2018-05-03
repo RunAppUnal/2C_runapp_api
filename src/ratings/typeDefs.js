@@ -14,7 +14,7 @@ input RatingInput {
     user_id: Int!
     car_rating: Int!
     driver_rating: Int!
-    comment: String!
+    comment: String
 }
 `;
 

@@ -14,9 +14,9 @@ const resolvers = {
 		createRating: (_, { rating }) =>
 			generalRequest(`${URL}`, 'POST', rating),
 		updateRating: (_, { id, rating }) =>
-			generalRequest(`${URL}/${id}`, 'PUT', rating),
+			generalRequest(`${URL}${id}/`, 'PUT', rating),
 		deleteRating: (_, { id }) =>
-			generalRequest(`${URL}/${id}`, 'DELETE')
+			generalRequest(`${URL}${id}`, 'DELETE')
 	}
 };
 
