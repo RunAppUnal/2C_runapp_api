@@ -13,8 +13,14 @@ const app = new Koa();
 const router = new KoaRouter();
 const PORT = process.env.PORT || 5000;
 
+
+const koaOptions = {
+    origin: true,
+    credentials: true
+}
+
 app.use(koaLogger());
-app.use(koaCors());
+app.use(koaCors(koaOptions));
 
 // read token from header
 app.use(async (ctx, next) => {
