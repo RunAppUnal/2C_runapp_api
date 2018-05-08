@@ -6,9 +6,9 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 const resolvers = {
 	Query: {
 		userById: (_, { userid }) =>
-			generalRequest(`${URL}userById/${userid}`, 'GET'),
+			generalRequest(`${URL}/userById/${userid}`, 'GET'),
 		userByUsername: (_, { username }) =>
-			generalRequest(`${URL}userByUsername/${username}`, 'GET'),
+			generalRequest(`${URL}/userByUsername/${username}`, 'GET'),
 		validateToken: (_, {token, uid, client}) =>
 			generalRequest(`${URL}/validate_token?token=${token}&uid=${uid}&client=${client}`, 'GET'),
 	},
