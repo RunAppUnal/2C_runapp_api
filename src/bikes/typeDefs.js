@@ -16,6 +16,7 @@ type BikeRoute {
     destinationAddr: String
     route_points: GeoJSON
     route_distance: Float
+    match_routes:[String]
 }
 
 input BikeRouteInput {
@@ -38,4 +39,5 @@ export const bikeRouteMutations = `
     createBikeRoute(bikeRoute: BikeRouteInput!): BikeRoute!
     deleteBikeRoute(id: ID!): BikeRoute!
     updateBikeRoute(id: ID!, bikeRoute: BikeRouteInput!): BikeRoute!
+    matchBikeRoute( id: ID! , id2: ID!): [BikeRoute]
 `;

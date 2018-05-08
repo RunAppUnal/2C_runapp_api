@@ -1,8 +1,8 @@
 import { generalRequest, getRequest } from '../utilities';
 import { url, port, entryPoint } from './server';
 
-//const URL = `http://${url}:${port}/${entryPoint}`;
-const URL = `http://localhost:6003/route/`;
+const URL = `http://${url}:${port}/${entryPoint}`;
+//const URL = `http://localhost:1337/route/`;
 
 const resolvers = {
 	Query: {
@@ -19,7 +19,9 @@ const resolvers = {
 		updateBikeRoute: (_, { id, bikeRoute }) =>
 			generalRequest(`${URL}${id}`, 'PUT', bikeRoute),
 		deleteBikeRoute: (_, { id }) =>
-			generalRequest(`${URL}${id}`, 'DELETE')
+			generalRequest(`${URL}${id}`, 'DELETE'),
+		matchBikeRoute: (_, { id , id2}) =>
+			generalRequest(`${URL}match/${id}/${id2}`, 'GET'),
 	}
 };
 
