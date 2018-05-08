@@ -10,6 +10,8 @@ type User {
     cellphone: String!
     uid: String!
     allow_password_change: Boolean!
+    token: String
+    client: String
 }
 
 input UserInput {
@@ -26,6 +28,7 @@ input UserInput {
 export const usersQueries = `
     userById(userid: Int!): User!
     userByUsername(username: String!): User!
+
 `;
 
 export const usersMutations = `
