@@ -23,16 +23,23 @@ input UserInput {
   lastname: String!
   cellphone: String!
 }
+
+type Validate {
+  success: String!
+}
+
 `;
+
 
 export const usersQueries = `
     userById(userid: Int!): User!
     userByUsername(username: String!): User!
-
+    validateToken(token: String!, uid: String!, client: String!): Validate!
 `;
 
 export const usersMutations = `
     createUser(user: UserInput!): User!
     deleteUser(username: String!): User!
     login(email: String!, password: String!): User!
+    logout(token: String!, uid: String!, client: String!): Validate!
 `;
