@@ -15,6 +15,9 @@ type Route {
     users_in_route: String!
     active: Boolean
     spaces_available: Int!
+    ratings: String!
+    userRating: String!
+    comments: String!
 }
 
 input RouteInput {
@@ -32,10 +35,11 @@ input RouteInput {
   users_in_route: String!
   active: Boolean
   spaces_available: Int!
+  ratings: String!
+  userRating: String!
+  comments: String!
 }
 `;
-
-
 
 export const routesQueries = `
     allRoutes: [Route]!
