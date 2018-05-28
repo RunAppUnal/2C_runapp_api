@@ -23,6 +23,5 @@ services:
       USER_URL: '192.168.99.102'
       USER_PORT: '6004'
       USER_ENTRY: 'auth/'
-      #TO DO here
     ports:
       - '8000:8000'
